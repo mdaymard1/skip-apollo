@@ -20,7 +20,8 @@ let package = Package(
     ],
     targets: [
         .target(name: "SkipApollo", dependencies: [
-            .product(name: "SkipFoundation", package: "skip-foundation")
+            .product(name: "SkipFoundation", package: "skip-foundation"),
+            .product(name: "Apollo", package: "apollo-ios")
         ], resources: [.process("Resources")], plugins: [.plugin(name: "skipstone", package: "skip")]),
         .testTarget(name: "SkipApolloTests", dependencies: [
             "SkipApollo",
