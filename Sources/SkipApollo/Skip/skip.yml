@@ -1,0 +1,9 @@
+# Configuration file for https://skip.tools project
+#
+# Kotlin dependencies and Gradle build options for this module can be configured here
+build:
+  contents:
+    - block: 'dependencies'
+      contents:
+        - 'implementation("com.apollographql.apollo3:apollo-runtime:3.8.4")'
+        - 'implementation("com.apollographql.apollo:apollo-normalized-cache:4.1.0")'
