@@ -3,19 +3,19 @@
 # Kotlin dependencies and Gradle build options for this module can be configured here
 build:
   contents:
-    - block: 'plugins'
-      contents:
-        - 'id("com.apollographql.apollo3") version "3.8.4"'
+#    - block: 'plugins'
+#      contents:
+#        - 'id("com.apollographql.apollo3") version "3.8.4"'
         
-    - block: 'apollo'
-      contents:
-        - block: 'service(service)'
-          contents:
-            - 'packageName.set("com.maginestudios.magicstory")'
+#    - block: 'apollo'
+#      contents:
+#        - block: 'service("service")'
+#          contents:
+#            - 'packageName.set("com.maginestudios.magicstory")'
 
     - block: 'dependencies'
       contents:
         - 'implementation("com.apollographql.apollo3:apollo-runtime:3.8.4")'
         - 'implementation("com.apollographql.apollo:apollo-normalized-cache:4.1.0")'
-        - 'implementation("com.apollographql.apollo3:com.apollographql.apollo.gradle.plugin:3.8.4")'
+#        - 'implementation("com.apollographql.apollo3:com.apollographql.apollo.gradle.plugin:3.8.4")'
                 
