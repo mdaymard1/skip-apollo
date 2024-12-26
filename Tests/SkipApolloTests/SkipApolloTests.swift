@@ -24,6 +24,7 @@ final class SkipApolloTests: XCTestCase {
         
         let provider = DefaultInterceptorProvider(store: store)
         
+        
         let networkTransport = RequestChainNetworkTransport(
             interceptorProvider: provider,
             endpointURL: URL(string: "http://localhost:4000")!
@@ -41,7 +42,20 @@ final class SkipApolloTests: XCTestCase {
         XCTAssertEqual("SkipApollo", testData.testModuleName)
     }
 
+//    private class AuthorizationInterceptor: ApolloInterceptor {
+//        var id: String
+//        
+//        func interceptAsync<Operation>(chain: any Apollo.RequestChain, request: Apollo.HTTPRequest<Operation>, response: Apollo.HTTPResponse<Operation>?, completion: @escaping (Result<Apollo.GraphQLResult<Operation.Data>, any Error>) -> Void) where Operation : ApolloAPI.GraphQLOperation {
+//            
+//        }
+//        
+//        
+//    }
 }
+
+//class NetworkInterceptorProvider: DefaultInterceptorProvider {
+//
+//}
 
 struct TestData : Codable, Hashable {
     var testModuleName: String

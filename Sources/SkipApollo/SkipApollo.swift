@@ -56,7 +56,7 @@ public class RequestChainNetworkTransport {
 
 public class ApolloClient {
     
-    var apolloClient: ApolloClient
+//    var apolloClient: ApolloClient
     
     private var networkTransport: RequestChainNetworkTransport
     private var store: ApolloStore
@@ -69,7 +69,7 @@ public class ApolloClient {
         androidApolloClient = ApolloClient.Builder()
         //    .serverUrl("http://10.0.0.36:4000/graphql")
             .serverUrl("https://api.magicstory.com")
-            .addHttpInterceptor(AuthorizationInterceptor())
+//            .addHttpInterceptor(AuthorizationInterceptor())
             .build()
     }
 }
