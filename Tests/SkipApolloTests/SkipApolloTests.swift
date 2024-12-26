@@ -20,10 +20,16 @@ final class SkipApolloTests: XCTestCase {
         
         let inMemory = InMemoryNormalizedCache()
         let store = ApolloStore(cache: inMemory)
-        let client = URLSessionClient(sessionConfiguration: URLSessionConfiguration.default, callbackQueue: OperationQueue.current)
+//        let client = URLSessionClient(sessionConfiguration: URLSessionConfiguration.default, callbackQueue: OperationQueue.current)
         
-        let defaultInterceptorProvider = DefaultInterceptorProvider(client: client, store: store)
+        let provider = DefaultInterceptorProvider(store: store)
         
+        let networkTransport = RequestChainNetworkTransport(
+            interceptorProvider: provider,
+            endpointURL: URL(string: "http://localhost:4000")!
+        )
+        let client = ApolloClient(networkTransport: networkTransport, store: store)
+
         
         XCTAssertEqual(1 + 2, 3, "basic test")
     }
