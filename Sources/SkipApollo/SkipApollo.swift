@@ -48,7 +48,7 @@ public class RequestChainNetworkTransport {
     private var interceptorProvider: DefaultInterceptorProvider
     private var endpointURL: URL
     
-    init(interceptorProvider: DefaultInterceptorProvider, endpointURL: URL) {
+    public init(interceptorProvider: DefaultInterceptorProvider, endpointURL: URL) {
         self.interceptorProvider = interceptorProvider
         self.endpointURL = endpointURL
     }
