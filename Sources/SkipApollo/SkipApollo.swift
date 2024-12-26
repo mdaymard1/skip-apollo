@@ -19,7 +19,7 @@ public class InMemoryNormalizedCache {
 public class ApolloStore {
     var cache: InMemoryNormalizedCache
     
-    init(cache: InMemoryNormalizedCache) {
+    public init(cache: InMemoryNormalizedCache) {
         print("initializing InMemoryNormalizedCache")
         self.cache = cache
     }
@@ -34,11 +34,11 @@ public protocol GraphQLOperation {
 public class DefaultInterceptorProvider {
     var store: ApolloStore
     
-    init(store: ApolloStore) {
+    public init(store: ApolloStore) {
         self.store = store
     }
     
-    func interceptors<Operation>(for operation: Operation) -> [ApolloInterceptor] where Operation : GraphQLOperation {
+    public func interceptors<Operation>(for operation: Operation) -> [ApolloInterceptor] where Operation : GraphQLOperation {
         
         return []
     }
@@ -62,7 +62,7 @@ public class ApolloClient {
     private var store: ApolloStore
     private var androidApolloClient: com.apollographql.apollo3.ApolloClient
     
-    init(networkTransport: RequestChainNetworkTransport, store: ApolloStore) {
+    public init(networkTransport: RequestChainNetworkTransport, store: ApolloStore) {
         self.networkTransport = networkTransport
         self.store = store
         
